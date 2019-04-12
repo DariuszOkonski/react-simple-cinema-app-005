@@ -1,3 +1,27 @@
 .app {
   text-align: center;
+  background-color: #ccc;
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px 10px;
+  border: 1px solid black;
+}
+
+.app button {
+  display: block;
+  margin: 20px auto;
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 10px 15px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  transition: .2s;
+}
+
+.app button:hover {
+  background-color: black;
+  color: white;
 }
