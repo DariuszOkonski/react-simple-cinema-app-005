@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from './Header';
+import ControlData from './ControlData';
+import DisplayData from './DisplayData';
 
 class App extends Component {
+  state = {
+    checked: false,
+    showData: false,
+  }
+
+  handleCheckBox = () => {
+    this.setState((prevState) => ({
+      checked: !prevState.checked,
+      showData: false,
+    }));
+  }
+
+  handleClick = () => {
+    this.setState((prevState) => ({
+      showData: true,
+    }))
+  }
+
   render() {
     return (
       <div className="app">
-        <h1>Buy a ticket for a horror of a year</h1>
-
-        <input type="checkbox" id="check" />
-        <label htmlFor="check">I have at least 16 years</label>
-
-        <button>buy ticket</button>
-
-        <h2>You can not watch that movie if you have less then 16 year old!</h2>
-        <h2>You can watch that movie! Enjoy!</h2>
+        <Header />
+        <ControlData state={this.state} check={this.handleCheckBox} click={this.handleClick} />
+        <DisplayData state={this.state} />
       </div>
     );
   }
